@@ -24,6 +24,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+app.get("/", (req,res)=>{
+    res.json({" Deployed": "heroku"});
+});
+
 // get req from auth in auth.js
 //send data from auth to client
 app.get("/api/user/auth", auth, (req, res) => {
